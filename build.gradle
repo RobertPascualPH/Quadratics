@@ -1,0 +1,42 @@
+apply plugin: 'java'
+
+jar {
+    manifest {
+        attributes('Main-Class' : 'ph.mmhsvictoria.apps.quadratics.QuadMainFX',
+                   'Class-Path' : 'ph/mmhsvictoria/apps/quadratics/')
+    }
+}
+
+
+task runapp << {
+    String cmd = "java -cp build/classes/main:src/main/resources ph.mmhsvictoria.apps.quadratics.QuadMainFX"
+
+    System.out.println("\nRunning with Resource Files in Source Directory.");
+    System.out.println("Use this task when testing the CSS Stylesheet.\n");
+
+    String retval = cmd.execute().getText();
+    System.out.println(retval);
+}
+
+
+task runbuild << {
+    String cmd = "java -cp build/classes/main:build/resources/main ph.mmhsvictoria.apps.quadratics.QuadMainFX"
+
+    System.out.println("\nRunning with Resource Files in Build Directory.");
+    System.out.println("Use this task to see the build result.");
+    System.out.println("Execute gradle build if CSS Style is inconsistent with Source Set.\n");
+
+    String retval = cmd.execute().getText();
+    System.out.println(retval);
+}
+
+task testjar << {
+    String cmd = "java -jar build/libs/quadratics.jar"
+
+    System.out.println("\nExecuting the JAR file.\n");
+
+    String retval = cmd.execute().getText();
+    System.out.println(retval);
+}
+
+

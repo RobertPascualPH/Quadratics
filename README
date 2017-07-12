@@ -1,0 +1,14 @@
+QUADRATICS
+
+Small Java program that I use when teaching quadratic equations and
+quadratic functions. For the function f(x) = ax^2 + bx + c this program
+will print the zeros (if they exist), the vertex, and will also draw a graph
+of the equation.
+
+Furthermore, given three non-collinear points, this program shall also
+provide the quadratic function which passes through thoe points.
+
+This program is actually easy to do, mathematically. It is the user
+interface that makes this program so tedious to create.
+
+
