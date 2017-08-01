@@ -5,6 +5,7 @@
 package ph.mmhsvictoria.apps.quadratics;
 
 import javafx.application.*;
+import javafx.geometry.*;
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
@@ -87,17 +88,19 @@ public class InterpolationTab {
         parTab.setContent(tabpane);
         parTab.setOnSelectionChanged(e -> tabSelected());
 
+        tabpane.getColumnConstraints().add(new ColumnConstraints(50));   // Applies to column 0
+        tabpane.getColumnConstraints().add(new ColumnConstraints(100));   // Applies to column 1 
         Text txtTitle = new Text("Polynomial Interpolation");
         tabpane.add(txtTitle, 0, 0);
 
         Text txtInstruct = new Text("Select number of points to interpolate then press Go");
-        tabpane.add(txtInstruct, 0,1 );
+        tabpane.add(txtInstruct, 0, 1, 2,1);
 
         Text txtLbl1 = new Text("Number of points to interpolate");
             tabpane.add(txtLbl1, 0, 2);  // Col = 0; Row = 1
-            numPoints = new TextField();
+        numPoints = new TextField();
             numPoints.setText("3");
-            tabpane.add(numPoints, 1, 2);
+            tabpane.add(numPoints, 1, 3, 1, 1);
         selectSema = 0; // Initially not selected.
         xC = new double[3];
         yC = new double[3];
