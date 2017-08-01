@@ -35,12 +35,12 @@ public class ParabolicTab {
 
         double discr = b*b - 4*a*c;
         QuadMainFX.textarea.print(
-                String.format("Discriminant = (%12.4f)\n", discr));
+                String.format("Discriminant = (%-12.4f)\n", discr));
         if (discr >= 0) {
             double x1 = (-b + Math.sqrt(discr))/(2*a);
             double x2 = (-b - Math.sqrt(discr))/(2*a);
             QuadMainFX.textarea.print(
-                String.format("Real roots   = (%12.4f, %12.4f)\n", x1, x2));
+                String.format("Real roots   = (%-12.4f, %-12.4f)\n", x1, x2));
         }
         else {
             QuadMainFX.textarea.print("No real roots.\n");
@@ -50,7 +50,7 @@ public class ParabolicTab {
             double vx = -b/(2*a);
             double vy = (a*vx + b)*vx + c;
             QuadMainFX.textarea.print(
-                String.format("Vertex       = (%12.4f, %12.4f)\n", vx, vy));
+                String.format("Vertex       = (%-12.4f, %-12.4f)\n", vx, vy));
         }
     }
 
@@ -65,7 +65,7 @@ public class ParabolicTab {
     }
 
     public static void func1BtnPressed() {
-        QuadMainFX.input1.setText("0.00");
+        QuadMainFX.input1.setText("");
         QuadMainFX.input2.setText("Input 2");
         QuadMainFX.input3.setText("Input 3");
 
@@ -115,22 +115,29 @@ public class ParabolicTab {
         parTab.setContent(tabpane);
         parTab.setOnSelectionChanged(e -> tabSelected());
 
-        Text txt1 = new Text("Enter values for the coefficient and press Go.");
-        tabpane.add(txt1, 0, 0);
+        // Set constraunts on the first column. Note that each succeeding
+        // addition to the list of column constraints applies that
+        // constraints to succeeding columns.
 
-        Text Albl = new Text("A");
+        tabpane.getColumnConstraints().add(new ColumnConstraints(50));   // Applies to column 0
+        tabpane.getColumnConstraints().add(new ColumnConstraints(100));   // Applies to column 1 
+
+        Text txt1 = new Text("Enter values for the coefficient and press Go.");
+        tabpane.add(txt1, 0, 0, 2, 1);
+
+        Text Albl = new Text("       A");
             tabpane.add(Albl, 0, 1);  // Col = 0; Row = 1
             Afld = new TextField();
             Afld.setText("");
             tabpane.add(Afld, 1, 1);
 
-        Text Blbl = new Text("B");
+        Text Blbl = new Text("       B");
             tabpane.add(Blbl, 0, 2);  // Col = 0; Row = 2
             Bfld = new TextField();
             Bfld.setText("");
             tabpane.add(Bfld, 1, 2);
 
-        Text Clbl = new Text("C");
+        Text Clbl = new Text("       C");
             tabpane.add(Clbl, 0, 3);
             Cfld = new TextField();
             Cfld.setText("");
