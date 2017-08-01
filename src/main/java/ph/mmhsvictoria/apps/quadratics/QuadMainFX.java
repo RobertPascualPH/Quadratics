@@ -35,7 +35,7 @@ public class QuadMainFX extends Application {
         // scrollpane.setVmax(10000.00);
         // textarea.print(String.format("Value of Vmax is %12.3f\n", scrollpane.getVmax()));
         // textarea.print(String.format("Value of Vvalue is %12.3f\n", scrollpane.getVvalue()));
-        // scrollpane.setVvalue(scrollpane.getVmax());
+        scrollpane.setVvalue(1);
     }
 
     public static void clearInput() {
