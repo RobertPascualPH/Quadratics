@@ -91,12 +91,15 @@ public class InterpolationTab {
         tabpane.getColumnConstraints().add(new ColumnConstraints(50));   // Applies to column 0
         tabpane.getColumnConstraints().add(new ColumnConstraints(100));   // Applies to column 1 
         Text txtTitle = new Text("Polynomial Interpolation");
-        tabpane.add(txtTitle, 0, 0);
+            txtTitle.getStyleClass().add("h2");
+            tabpane.add(txtTitle, 0, 0);
 
         Text txtInstruct = new Text("Select number of points to interpolate then press Go");
-        tabpane.add(txtInstruct, 0, 1, 2,1);
+            tabpane.add(txtInstruct, 0, 1, 2,1);
+            txtInstruct.getStyleClass().add("normal-text");
 
         Text txtLbl1 = new Text("Number of points to interpolate");
+            txtLbl1.getStyleClass().add("normal-text");
             tabpane.add(txtLbl1, 0, 2);  // Col = 0; Row = 1
         numPoints = new TextField();
             numPoints.setText("3");

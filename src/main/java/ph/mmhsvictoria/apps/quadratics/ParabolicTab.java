@@ -14,7 +14,7 @@ import javafx.collections.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ParabolicTab {
-    private static int selectSema = 1;       // Initially selected since on top.
+    private static int selectSema;       // Initially selected since on top.
     private static TextField Afld;
     private static TextField Bfld;
     private static TextField Cfld;
@@ -123,27 +123,32 @@ public class ParabolicTab {
         tabpane.getColumnConstraints().add(new ColumnConstraints(100));   // Applies to column 1 
 
         Text txt1 = new Text("Enter values for the coefficient and press Go.");
-        tabpane.add(txt1, 0, 0, 2, 1);
+            txt1.getStyleClass().add("normal-text");
+            tabpane.add(txt1, 0, 0, 2, 1);
 
-        Text Albl = new Text("       A");
+        Text Albl = new Text("A");
+            Albl.getStyleClass().add("field-labels");
             tabpane.add(Albl, 0, 1);  // Col = 0; Row = 1
             Afld = new TextField();
             Afld.setText("");
             tabpane.add(Afld, 1, 1);
 
-        Text Blbl = new Text("       B");
+        Text Blbl = new Text("B");
+            Blbl.getStyleClass().add("field-labels");
             tabpane.add(Blbl, 0, 2);  // Col = 0; Row = 2
             Bfld = new TextField();
             Bfld.setText("");
             tabpane.add(Bfld, 1, 2);
 
-        Text Clbl = new Text("       C");
+        Text Clbl = new Text("C");
+            Clbl.getStyleClass().add("field-labels");
             tabpane.add(Clbl, 0, 3);
             Cfld = new TextField();
             Cfld.setText("");
             tabpane.add(Cfld, 1, 3);
 
         ParabolicTab.prepFuncButtons();
+        selectSema = 1;
     }
 }
 

@@ -12,6 +12,7 @@ import javafx.scene.layout.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.collections.*;
+import javafx.geometry.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class QuadMainFX extends Application {
@@ -98,6 +99,7 @@ public class QuadMainFX extends Application {
 
         BorderPane bpane = new BorderPane();
         Scene scene = new Scene(bpane);
+        scene.getStylesheets().add("ph/mmhsvictoria/apps/quadratics/default.css");
 
 
         // Place desired elements on the Top of BorderPane.
@@ -106,7 +108,8 @@ public class QuadMainFX extends Application {
         bpane.setTop(topPanel);
 
         Text programName = new Text("SPECIAL FUNCTIONS");
-        topPanel.getChildren().add(programName);
+            programName.getStyleClass().add("h1");
+            topPanel.getChildren().add(programName);
 
         TabPane tabpane = new TabPane();
 
@@ -115,8 +118,8 @@ public class QuadMainFX extends Application {
         Tab qftab = new Tab("Parabolic");
         tabpane.getTabs().add(qftab);
 
-        // Create the Tab for the elliptic function.
-        Tab eltab = new Tab("Elliptic");
+        // Create the Tab for the Ratios.
+        Tab eltab = new Tab("Ratios");
         tabpane.getTabs().add(eltab);
 
 
@@ -181,14 +184,16 @@ public class QuadMainFX extends Application {
         // At the bottom we put in the various buttons
 
         HBox bottomHBox = new HBox();
+        bottomHBox.setAlignment(Pos.CENTER_RIGHT);
         Button qButton = new Button("Quit");     qButton.setOnAction(e->Platform.exit());
         Button cButton = new Button("Clear");    cButton.setOnAction(e->QuadMainFX.clearTextArea()); 
-        bottomHBox.getChildren().addAll(qButton, cButton);
+        bottomHBox.getChildren().addAll(cButton, qButton);
 
         bpane.setBottom(bottomHBox);
 
 
         // Now call all the other initializers
+        RatioTab.initialize(eltab);
         InterpolationTab.initialize(qitab);
 
 
