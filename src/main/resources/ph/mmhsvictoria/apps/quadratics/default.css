@@ -1,0 +1,182 @@
+/* *******************************************************************************
+ * default.css
+ *
+ * Style sheet for PressConFX. This is a rather generic
+ * stylesheet. If you want to create your own style rules
+ * for PressConFX, copy this stylesheet to PressConFX.css
+ * and modify the style rules there.
+ *
+ * PressConFX.css overrides the rules of default.css.
+ *
+ *
+ * Information about the CSS properties mentioned herein can be
+ * found in
+ *
+ * http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#intro
+ *
+ * For choosing HTML colors go to
+ *
+ * http://www.w3schools.com/colors/colors_picker.asp
+ *
+ * The property names are very confusing. Read the comments besides each
+ * CSS property very carefully.
+ *
+ * ******************************************************************************/
+
+/* This is the style for the topmost main screen. */
+
+.root {
+    /* -fx-background-color : #11192c; */
+    /* -fx-background-image : url("blue-abstract.jpg"); */
+    -fx-background-repeat: repeat;   
+
+    /* The following rules are meant for background images.
+       Commented out since I don't need it for the current rule.
+       Placed here for reference. I might need them for some other rules.
+ 
+    -fx-background-repeat: stretch;   
+    -fx-background-size: 900 506;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
+    */
+
+    -fx-background-radius : 5.0;
+    -fx-background-insets : 5.0 5.0 5.0 5.0;
+    -fx-padding : 10pt; /* margin around the grid */
+    -fx-spacing : 15pt;  /* spaces between child nodes */
+    -fx-alignment : center; /* Alignment of the child nodes within the grid. */
+    -fx-scale-shape : true;
+}
+
+.label {
+    -fx-font-size : 11pt;
+}
+
+.main-screen {
+    /* -fx-background-color : #11192c; */
+    -fx-background-image : url("blue-abstract.jpg");
+    -fx-background-repeat: repeat;   
+
+    /* The following rules are meant for background images.
+       Commented out since I don't need it for the current rule.
+       Placed here for reference. I might need them for some other rules.
+ 
+    -fx-background-repeat: stretch;   
+    -fx-background-size: 900 506;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
+    */
+
+    -fx-background-radius : 5.0;
+    -fx-background-insets : 5.0 5.0 5.0 5.0;
+    -fx-padding : 10pt; /* margin around the grid */
+    -fx-spacing : 15pt;  /* spaces between child nodes */
+    -fx-alignment : center; /* Alignment of the child nodes within the grid. */
+    -fx-scale-shape : true;
+}
+
+/* Windows for the various subactivities which are run when
+   selected from the main window. */
+.activity-windows {
+    /* -fx-background-color : #fff2cc; */
+    -fx-background-image : url("blue-abstract.jpg");
+
+    /* The following rules are meant for background images.
+       Commented out since I don't need it for the current rule.
+       Placed here for reference. I might need them for some other rules.
+ 
+    -fx-background-repeat: stretch;   
+    -fx-background-size: 900 506;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
+    */
+
+    -fx-fill : #fff9e6;   /* This would be the font color. No joking. */
+    -fx-background-radius : 5.0;
+    -fx-background-insets : 5.0 5.0 5.0 5.0;
+    -fx-padding : 30pt; /* margin around the grid */
+    -fx-spacing : 5pt;  /* spaces between child nodes */
+    -fx-alignment : center-left; /* Alignment of the child nodes within the grid. */
+}
+
+.activity-selector-buttons {
+}
+
+.button-box {
+    -fx-padding : 10pt;
+    -fx-spacing : 10pt
+}
+
+/* These are for the top and bottom panels of the main layout */
+
+.top-bottom-panels {
+    -fx-alignment : center;
+}
+
+.h1 { /* For uses similar to HTML's H1 tag. */
+    -fx-font-size : 17pt;
+    /* -fx-fill : #ed9692;   This would be the font color. No joking. */
+    -fx-text-alignment : center;
+    -fx-font-weight : normal;
+    -fx-padding : 15pt;
+}
+
+
+.h2 { /* For use similar to HTML's H2. */
+    -fx-font-size : 14pt;
+    -fx-fill : #1a0008;
+    -fx-text-alignment : center;
+    -fx-font-weight : normal;
+}
+
+.lighttext { /* Used for normal sized Text labels */
+    -fx-font-size : 11pt;
+    -fx-text-alignment : left;
+    -fx-fill : #fff9e6;   /* This would be the font color. No joking. */
+}
+
+.text-field {
+    -fx-font-size : 11pt;
+}
+
+.text-area {
+    -fx-font-size : 11pt;
+}
+
+.label { /* Applies to all Texts */
+    -fx-font-size : 11pt;
+    -fx-text-alignment : left;
+    /* -fx-fill : #fff9e6;  This would be the font color. No joking. */
+}
+
+.normal-text {
+    -fx-font-size : 11pt;
+    -fx-fill : #1a0008;
+    -fx-text-alignment : left;
+    -fx-font-weight : normal;
+}
+
+.tab-labels {
+    -fx-font-size : 11pt;
+    -fx-fill : #1a0008;
+    -fx-text-alignment : left;
+    -fx-font-weight : normal;
+}
+
+.field-labels {
+    -fx-font-size : 11pt;
+    -fx-fill : #1a0008;
+    -fx-text-alignment : right;
+    -fx-font-weight : normal;
+}
+
+.text { /* Applies to all Texts */
+    -fx-font-size : 11pt;
+    -fx-text-alignment : left;
+    /* -fx-fill : #fff9e6;  This would be the font color. No joking. */
+}
+
+.output-area {
+    -fx-fill : #8b008b;
+}
+
